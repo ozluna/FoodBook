@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Courgette:100 200,300,400,500,600,700|Playfair+Display:100,200,300,400,500,600,700');
+body{
+    margin:0;
+    
+}
+.landing{
+    position: relative;
+}
+div video{
+    width:100%;
+    height:40em;
+    
+}
+
+.greeting{
+    
+    position: absolute;
+    top: 25%;
+    background-color: rgb(255, 255, 249,0.7);
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    left: 34%;
+}
+
+.greeting h4 {
+    font-family: Playfair+display;
+    font-size: 1.5rem;    
+    padding: 4em 2em 0.5em;
+}
+.greeting h2{      
+    color:#b45008; 
+    font-family:courgette;
+    padding: 0 0.75em;
+    font-size: xxx-large;
+}
+
+ #map {
+        height: 100%;
+
+@media screen (max-width:991px){
+
+    
+}
