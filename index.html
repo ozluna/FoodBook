@@ -7,8 +7,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="assets/css/style.css">
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-       
+        
     
     <title>FoodBook</title>
 </head>
@@ -67,7 +66,10 @@
     <div class="row">
         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
             
-            <form><button type="submit" value="Submit"  onclick="getLocation()"> Near Me</button></form>
+            <form><button type="submit" value="Submit"  onclick="getLocation()"> Near Me</button>
+                <input class="controls" type="text" value="search" id="autocomplete" placeholder="you can type here"/>
+            </form>
+
             
         
         </div>
@@ -80,28 +82,6 @@
 </section>
 <div id="map"></div>
 <footer></footer>
-<script>
-
-   
-function places(){
-    const axios = require('axios');
-    var location= '123 main street';
-    axios.get('https://maps.googleapis.com/maps/api/place/textsearch/json',{
-        params:{
-            query:location,
-            key:'AIzaSyAiH_4snPRQxnLLbrFzCK_CGNaYuVSFVsc'
-        }
-    })
-    .then(function(response){
-        console.log(reponse);
-
-    })
-    .catch(function(error){
-        console.log(error);
-    });
-}
-     places();
-</script>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
 			integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
 		</script>
@@ -112,12 +92,13 @@ function places(){
 			integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
 		</script>
     <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB0AVF65zYstXEfpzGaxpJdjuMVPFm5PBY&callback=initMap">    </script>
-   
-       
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA7dAxq4QyuAOZ9bAEG9b75w2LJNi41g2Q&callback=initMap">    </script>
+    <script async defer
+			src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB0AVF65zYstXEfpzGaxpJdjuMVPFm5PBY&libraries=places">
+		</script>  
     
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <script src="assets/js/geolocator.js"></script>
-    <!--<script src="assets/js/restaurant.js"></script>-->
+    <!--<script src="assets/js/geolocator.js"></script>-->
+    <script src="assets/js/restaurant.js"></script>
 </body>
 </html>

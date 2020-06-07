@@ -17,24 +17,4 @@
     }
     
 
-    function initMap() {
-    var nearme = { lat:52.205337,lng:0.12181699999996454}
-    var map = new google.maps.Map(document.getElementById("map"), {
-        zoom: 8,
-        center:nearme
-           
-        
-    });
    
-    
-   
-function addMarker(coords){
-    var marker = new google.maps.Marker({
-        position: coords,
-        map:map,
-        icon: "http://maps.gstatic.com/mapfiles/place_api/icons/restaurant-70.png" 
-     });
-    
-}
-addMarker({ lat:52.205337,lng:0.12181699999996454})
-}
