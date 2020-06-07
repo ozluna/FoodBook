@@ -5,10 +5,12 @@ body{
 }
 .landing{
     position: relative;
+  
 }
 div video{
     width:100%;
     height:40em;
+    box-shadow: 2px 2px grey;
     
 }
 
@@ -36,7 +38,8 @@ div video{
 }
 
  #map {
-        height: 100%;
+        height: 300px;
+        width:300px;
 
 @media screen (max-width:991px){
 
