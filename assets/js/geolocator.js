@@ -1,15 +1,13 @@
   var map,infoWindow,services;
-  var startPos;
   var geoOptions = {
      timeout: 10 * 1000
   };
   let userPosition;
 
 function initMap() {
-   
+        bounds = new google.maps.LatLngBounds();   
         infoWindow = new google.maps.InfoWindow;
-
-        // Try HTML5 geolocation.
+       
         if (navigator.geolocation) {
           navigator.geolocation.getCurrentPosition(function(position) {            
             var pos = {
@@ -24,6 +22,7 @@ function initMap() {
             infoWindow.setContent('Location found.');
             infoWindow.open(map);
             map.setCenter(pos);
+            getNearbyPlaces(pos);
           }, function() {
             handleLocationError(true, infoWindow);
           });
@@ -37,11 +36,11 @@ function initMap() {
 }
     // Handle a geolocation error
     function handleLocationError(browserHasGeolocation, infoWindow) {
-        // Set default location to Sydney, Australia
+        // Set default location to Cambridge, United Kingdom
         pos = {lat:52.2141579, lng: 0.147892};
         map = new google.maps.Map(document.getElementById('map'), {
         center: pos,
-        zoom: 15
+        zoom: 14
         });
 
         // Display an InfoWindow at the map center
@@ -55,6 +54,37 @@ function initMap() {
     /* TODO: Step 3B3, Call the Places Nearby Search */
 }
 // adding nearby restaurants I will use places google   
+function getNearbyPlaces(position){
+    let request={
+        location: position,
+        raius:'500',
+        type:['restaurant']
+    };
+    service = new google.maps.places.PlacesService(map);
+    service.nearbySearch(request, nearbyCallback);
+}
+
 //adding markers for the restaurants
+function nearbyCallback(result,status){
+    if(status==google.maps.places.PlacesServiceStatus.OK){
+        createMarkers(results);
+    }
+}
+createMarkers(places){
+    places.forEach(place);
+    function place{
+        let marker = new google.maps.Marker({
+        position: place.geometry.location,
+        map: map,
+        title: place.name
+        }
+         //add event listener for the buttons restaurants , cafes , tourist attractions and hotels
+        bounds.extend(place.geometry.location);
+    };
+    map.fitBounds(bounds);
+}
+
+
+
 //set an radius 
 //add event listener for the buttons restaurants , cafes , tourist attractions and hotels
