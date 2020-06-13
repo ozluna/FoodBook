@@ -29,8 +29,7 @@ function initMap() {
         } else {
           // Browser doesn't support Geolocation
           handleLocationError(false, infoWindow);
-        }
-             
+        }        
      
     
 }
@@ -51,7 +50,7 @@ function initMap() {
         infoWindow.open(map);
         currentInfoWindow = infoWindow;
 
-    /* TODO: Step 3B3, Call the Places Nearby Search */
+    
 }
 // adding nearby restaurants I will use places google   
 function getNearbyPlaces(position){
@@ -78,7 +77,7 @@ function createMarkers(places) {
         title: place.name
     });
 
-    /* TODO: Step 4B: Add click listeners to the markers */
+   
 
     // Adjust the map bounds to include the location of this marker
     bounds.extend(place.geometry.location);
