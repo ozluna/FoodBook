@@ -57,7 +57,7 @@ function initMap() {
 function getNearbyPlaces(position){
     let request={
         location: position,
-        raius:'500',
+        radius:'500',
         type:['restaurant']
     };
     service = new google.maps.places.PlacesService(map);
@@ -65,22 +65,26 @@ function getNearbyPlaces(position){
 }
 
 //adding markers for the restaurants
-function nearbyCallback(result,status){
+function nearbyCallback(results,status){
     if(status==google.maps.places.PlacesServiceStatus.OK){
         createMarkers(results);
     }
 }
-createMarkers(places){
-    places.forEach(place);
-    function place{
-        let marker = new google.maps.Marker({
+function createMarkers(places) {
+    places.forEach(place => {
+    let marker = new google.maps.Marker({
         position: place.geometry.location,
         map: map,
         title: place.name
-        }
-         //add event listener for the buttons restaurants , cafes , tourist attractions and hotels
-        bounds.extend(place.geometry.location);
-    };
+    });
+
+    /* TODO: Step 4B: Add click listeners to the markers */
+
+    // Adjust the map bounds to include the location of this marker
+    bounds.extend(place.geometry.location);
+    });
+    /* Once all the markers have been placed, adjust the bounds of the map to
+    * show all the markers within the visible area. */
     map.fitBounds(bounds);
 }
 
