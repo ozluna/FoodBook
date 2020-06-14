@@ -1,6 +1,7 @@
   var map,infoWindow,services,keyWord;
   let infoCard;
   let userPosition;
+  var markers=[];
 
 function initMap() {
         bounds = new google.maps.LatLngBounds();   
@@ -21,7 +22,7 @@ function initMap() {
             infoWindow.setContent('Location found.');
             infoWindow.open(map);
             map.setCenter(pos);
-           getNearbyPlaces(pos);
+           //getNearbyPlaces(pos);
           }, function() {
             handleLocationError(true, infoWindow);
           });
@@ -59,17 +60,16 @@ document.getElementById("mediterranean").addEventListener("click", Mediterranean
 document.getElementById("middle-eastern").addEventListener("click", MiddleEastern);
 document.getElementById("chinese").addEventListener("click", Chinese);
 
-function British(){   
-    let request={
+function British(){  
+     let request={
         bounds: map.getBounds(),
         keyword:'fishandchips'
-        }   
-    
+        }       
     service = new google.maps.places.PlacesService(map);
     service.nearbySearch(request, nearbyCallback);
+    
 }
 function Chinese(){
-    
     let request={
         bounds: map.getBounds(),
         keyword:'chinese+restaurant'
@@ -77,9 +77,10 @@ function Chinese(){
     
     service = new google.maps.places.PlacesService(map);
     service.nearbySearch(request, nearbyCallback);
+    
 }
 function Indian(){
-      let request={
+    let request={
         bounds: map.getBounds(),
         keyword:'indian+restaurant'
         }   
@@ -99,8 +100,7 @@ function Japanese(){
     service.nearbySearch(request, nearbyCallback);
 }
 function Mediterranean(){
-    
-    let request={
+   let request={
         bounds: map.getBounds(),
         keyword:'mediterranean+restaurant'
         }   
@@ -119,17 +119,15 @@ function MiddleEastern(){
 }
 
 // adding nearby restaurants I will use places google   
-function getNearbyPlaces(position){
+/*function getNearbyPlaces(position){
     let request={
         location: position,
         radius:'500',
-        keyword:'sushi'
-       
+             
     };
     service = new google.maps.places.PlacesService(map);
-    service.nearbySearch(request, nearbyCallback);
-    
-}
+    service.nearbySearch(request, nearbyCallback);    
+}*/
 
 //adding markers for the restaurants
 function nearbyCallback(results,status){
@@ -138,23 +136,33 @@ function nearbyCallback(results,status){
     }
 }
 function createMarkers(places) {
+    removeMarkers();
     places.forEach(place => {
     let marker = new google.maps.Marker({
         position: place.geometry.location,
         map: map,
         title: place.name
     });
-
-   
-
+    
+    markers.push(marker);
     // Adjust the map bounds to include the location of this marker
     bounds.extend(place.geometry.location);
     });
     /* Once all the markers have been placed, adjust the bounds of the map to
     * show all the markers within the visible area. */
     map.fitBounds(bounds);
+    
 }
 
+// clear markers for a different cuisene 
+ function removeMarkers() {  
+         for (var i = 0; i < markers.length; i++) {
+            if (markers[i]) {
+             markers[i].setMap(null);
+        }
+    }
+    markers = [];
+}
 
 
 //set an radius 
