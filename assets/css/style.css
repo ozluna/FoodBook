@@ -1,7 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Courgette:100 200,300,400,500,600,700|Playfair+Display:100,200,300,400,500,600,700');
+@import url('https://fonts.googleapis.com/css2?family=Courgette&family=Raleway:wght@500&display=swap');
+
 body{
     margin:0;
-    
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
 }
 .landing{
     position: relative;
@@ -26,20 +28,26 @@ div video{
 }
 
 .greeting h4 {
-    font-family: Playfair+display;
-    font-size: 1.5rem;    
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.3rem;   
+    font-weight: bold; 
     padding: 4em 2em 0.5em;
 }
 .greeting h2{      
     color:#b45008; 
-    font-family:courgette;
+    font-family:Courgette;
     padding: 0 0.75em;
     font-size: xxx-large;
 }
 
  #map {
         height: 500px;
-        width:500px;
+        width:100%;
+        border-radius: 2%;}
+
+div .img-thumbnail:hover {
+    opacity:0.5;
+}
 
 @media screen (max-width:991px){
 
