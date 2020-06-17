@@ -1,146 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" type="text/css" />
-    <link rel="stylesheet" href="assets/css/style.css">
-        
-    
-    <title>FoodBook</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+		type="text/css" />
+	<link rel="stylesheet" href="assets/css/style.css">
+
+
+	<title>FoodBook</title>
 </head>
+
 <body onload="initMap()">
-<header class="container-fluid">
-        <div class="row m-0" >
-            
-                <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                            <a class="navbar-brand" id="logo" href="index.html">FoodBook</a>
-                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+	<header class="container-fluid">
+		<div class="row p-0">
+
+			<nav class="navbar navbar-expand-lg navbar-light bg-light">
+				<a class="navbar-brand" id="logo" href="index.html">FoodBook</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                                 <span class="navbar-toggler-icon"></span>
                             </button>
-                            <div class="collapse navbar-collapse" id="navbarText">
-                                <ul class="navbar-nav mr-auto">
-                                <li class="nav-item active">
-                                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#restaurantInfo">Find restaurant</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#about-me">About me</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#contact-me">Contact me</a>
-                                </li>
-                                </ul>
-                                <span class="navbar-text">
-                                
+				<div class="collapse navbar-collapse" id="navbarText">
+					<ul class="navbar-nav mr-auto">
+						<li class="nav-item active">
+							<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#restaurantInfo">Find restaurant</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#about-me">About me</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#contact-me">Contact me</a>
+						</li>
+					</ul>
+					<span class="navbar-text">
+
                                 </span>
-                            </div>
-                </nav>
-                        
+				</div>
+			</nav>
 
-    </div>
-    
 
-    </header>
+		</div>
 
-<section class="landing">
-    <div class="greeting d-none d-lg-block d-xl-block">
-        <h4>WELCOME TO THE</h4> 
-        <h2>  FoodBook </h2>  
-    
-    </div>
-        <!-- Cambridge picture-->
-    <div class="video">
-        <video autoplay loop muted>
-            <source src="assets/video/restaurant1.mp4" type="video/mp4">
-  
-            Your browser does not support the video tag.
-        </video>
-    </div>
-    
-    
-</section>  
-<section> 
-    <h1> What type of food would you like to eat today?</h1>   
 
-</section>
-<!--Button will release the informationJQuery--> 
-<div class="row p-0">
-            <div class="col-lg-2 col-md-4 col-sm-12" id="british"><img src="assets/image/british.png" alt="Britsh" class="img-thumbnail">
-				
+	</header>
+
+	<section class="landing">
+		<div class="greeting d-none d-lg-block d-xl-block">
+			<h4>WELCOME TO THE</h4>
+			<h2> FoodBook </h2>
+
+		</div>
+		<!-- Cambridge picture-->
+		<div class="video">
+			<video autoplay loop muted>
+				<source src="assets/video/restaurant1.mp4" type="video/mp4">
+
+				Your browser does not support the video tag.
+			</video>
+		</div>
+
+
+	</section>
+	<section>
+		<h1> What type of food would you like to eat today?</h1>
+
+	</section>
+	<!-- Create a button says find restaurants-->
+	<!--Button will release the informationJQuery-->
+
+	<div class="row p-0">
+		<div class="col-lg-2 col-md-4 col-sm-12" id="british"><img src="assets/image/british.png" alt="Britsh" class="img-thumbnail">
+
 			</div>
 			<div class="col-lg-2 col-md-4 col-sm-12" id="chinese"><img src="assets/image/chinese.png" alt="Chinese" class="img-thumbnail ">
-				
+
 			</div>
-			<div class="col-lg-2 col-md-4 col-sm-12 " id="indian"><img src="assets/image/indian.png"  alt="Indian" class="img-thumbnail ">
-				
+				<div class="col-lg-2 col-md-4 col-sm-12 " id="indian"><img src="assets/image/indian.png"  alt="Indian" class="img-thumbnail ">
+
 			</div>
-				<div class="col-lg-2 col-md-4 col-sm-12" id="japanese"><img src="assets/image/japanese.png" alt="Japanese" class="img-thumbnail ">
-				
+					<div class="col-lg-2 col-md-4 col-sm-12" id="japanese"><img src="assets/image/japanese.png" alt="Japanese" class="img-thumbnail ">
+
 			</div>
-            	<div class="col-lg-2 col-md-4 col-sm-12" id="mediterranean"><img src="assets/image/mediterranean.png" alt="Mediterranean" class="img-thumbnail ">
-				
+						<div class="col-lg-2 col-md-4 col-sm-12" id="mediterranean"><img src="assets/image/mediterranean.png" alt="Mediterranean" class="img-thumbnail ">
+
 			</div>
-            	<div class="col-lg-2 col-md-4 col-sm-12" id="middle-eastern"><img src="assets/image/middle eastern.png" alt="Middle Eastern" class="img-thumbnail">
-					
+							<div class="col-lg-2 col-md-4 col-sm-12" id="middle-eastern"><img src="assets/image/middle eastern.png" alt="Middle Eastern" class="img-thumbnail">
+
 		</div>
-</div>
+							</div>
 
-<section id="restaurantInfo">
-    <div class="row p-0">
-        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">                
-              <div id="map"></div>
-                <!-- Create a button says find restaurants-->
-                <!--Crete a card for the results of the button-->
-                             
-            
-        </div>
-        <div class="card col-xl-6 col-lg-6 col-md-12 col-sm-12" style="width: 18rem;">
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            </div>
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item">Cras justo odio</li>
-                <li class="list-group-item">Dapibus ac facilisis in</li>
-                <li class="list-group-item">Vestibulum at eros</li>
-            </ul>
-            <div class="card-body">
-                <a href="#" class="card-link">Card link</a>
-                <a href="#" class="card-link">Another link</a>
-            </div>
-        </div>    
-                
-    </div>
-        
+							<section>
+								<div class="row p-0">
+									<div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+										<div id="map"></div>
 
-</section>
+										<!--Crete a card for the results of the button-->
+
+
+									</div>
+									<div class="col-xl-6 col-lg-6 col-md-12 col-sm-12" id="restaurantInfo"></div>
 
 
 
-<footer></footer>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-			integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
-		</script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-			integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
-		</script>
-		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-			integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
-		</script>
-    <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
-    <script async defer
-			src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB0AVF65zYstXEfpzGaxpJdjuMVPFm5PBY&libraries=places&callback=initMap">
-		</script>  
-    
-    
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <script src="assets/js/script.js"></script>
-    <script src="assets/js/restaurant.js"></script>
+								</div>
+
+
+							</section>
+
+
+
+							<footer></footer>
+							<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+								integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+								crossorigin="anonymous">
+							</script>
+							<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+								integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+								crossorigin="anonymous">
+							</script>
+							<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+								integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+								crossorigin="anonymous">
+							</script>
+							<script
+								src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
+							</script>
+							<script async defer
+								src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB0AVF65zYstXEfpzGaxpJdjuMVPFm5PBY&libraries=places&callback=initMap">
+							</script>
+
+
+							<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+								integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+								crossorigin="anonymous"></script>
+							<script src="assets/js/script.js"></script>
+							<script src="assets/js/restaurant.js"></script>
 </body>
+
 </html>
