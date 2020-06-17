@@ -1,13 +1,14 @@
   var map,infoWindow,services,keyWord;
-  let infoCard;
   let userPosition;
   var markers=[];
-
+  let currentInfoWindow;
+     
 function initMap() {
         bounds = new google.maps.LatLngBounds();   
         infoWindow = new google.maps.InfoWindow;
-        infoCard = document.getElementById('restaurantInfo');
-       
+             
+        currentInfoWindow = infoWindow;
+     
         if (navigator.geolocation) {
           navigator.geolocation.getCurrentPosition(function(position) {            
             var pos = {
@@ -88,8 +89,6 @@ function Indian(){
     service = new google.maps.places.PlacesService(map);
     service.nearbySearch(request, nearbyCallback);
 }
-
-
 function Japanese(){
     let request={
         bounds: map.getBounds(),
@@ -117,18 +116,6 @@ function MiddleEastern(){
     service = new google.maps.places.PlacesService(map);
     service.nearbySearch(request, nearbyCallback);
 }
-
-// adding nearby restaurants I will use places google   
-/*function getNearbyPlaces(position){
-    let request={
-        location: position,
-        radius:'500',
-             
-    };
-    service = new google.maps.places.PlacesService(map);
-    service.nearbySearch(request, nearbyCallback);    
-}*/
-
 //adding markers for the restaurants
 function nearbyCallback(results,status){
     if(status==google.maps.places.PlacesServiceStatus.OK){
@@ -141,16 +128,33 @@ function createMarkers(places) {
     let marker = new google.maps.Marker({
         position: place.geometry.location,
         map: map,
-        title: place.name
+        title: place.name,
+        animation: google.maps.Animation.DROP
     });
     
     markers.push(marker);
+    //showing the place details on demand
+    google.maps.event.addListener(marker, 'click', function() {
+        console.log("the markers is clicked")
+    let request = {
+    placeId: place.place_id,
+    fields: ['name', 'formatted_address', 'geometry', 'rating',
+        'website', 'photos','reviews']
+    };
+    
+    /* Only fetch the details of a place when the user clicks on a marker.*/
+    
+    service.getDetails(request,function (placeResult, status) {
+    showDetails(placeResult, marker, status)
+            });
+        });
     // Adjust the map bounds to include the location of this marker
     bounds.extend(place.geometry.location);
     });
     /* Once all the markers have been placed, adjust the bounds of the map to
     * show all the markers within the visible area. */
     map.fitBounds(bounds);
+
     
 }
 
@@ -164,5 +168,67 @@ function createMarkers(places) {
     markers = [];
 }
 
+// Builds an InfoWindow to display details above the marker
+function showDetails(placeResult, marker, status) {
+    if (status == google.maps.places.PlacesServiceStatus.OK) {
+    let placeInfowindow = new google.maps.InfoWindow();
+    placeInfowindow.setContent('<div><strong>' + placeResult.name +
+        '</strong><br>' + 'Rating: ' + placeResult.rating + '</div>');
+    placeInfowindow.open(marker.map, marker);
+    currentInfoWindow.close();
+    currentInfoWindow = placeInfowindow;
+    showCard(placeResult);
+    } else {
+    console.log('showDetails failed: ' + status);
+    }
+}
+//display restaurant details on a bootstarp card
+function showCard(placeResult){
+    let infoCard  = document.getElementById('restaurantInfo');
+    //if infoCard is open remove the open class.
+    if(infoCard.classList.contains("open")){
+    infoCard.classList.remove("open");
+    }
 
-//set an radius 
+    //clearing previous details
+    while(infoCard.lastChild){
+        infoCard.removeChild(infoCard.lastChild);
+    }
+
+    //Adding photo if there is one
+    if(placeResult.photos){     
+        let firstPhoto =placeResult.photos[0];
+        photo = document.createElement('img');
+        photo.classList.add('card-img-top');
+        infoCard.appendChild(photo);    
+    }
+        let newDiv = document.createElement('div');
+        newDiv.classList.add('card-body');
+        infoCard.appendChild(newDiv);
+        let title = document.createElement('h5');
+        title.classList.add('card-title');
+        title.textContent = placeResult.name;
+        newDiv.appendChild(title);
+        if(placeResult.rating!=null){
+           let rating=document.createElement('p');
+           rating.classList.add('card-text');
+           rating.textContent=`Rating: ${placeResult.rating} \u272e`;
+           newDiv.appendChild(rating);           
+        }
+        let address=document.createElement('p');
+        address.textContent =`Address: ${placeResult.formatted_address}`;
+        newDiv.appendChild(address);
+
+        let listGroup= document.createElement('ul');
+        listGroup.classList.add('list-group','list-group-flush');
+       
+        let listItems = document.createElement('li');
+        listItems.classList.add('list-group-item');
+        listGroup.appendChild(listItems);
+        
+        
+       
+
+       infoCard.classList.add("open");
+
+    }
