@@ -1,5 +1,5 @@
   var map,infoWindow,services,keyWord;
-  let userPosition;
+  var userPosition;
   var markers=[];
   let currentInfoWindow;
      
@@ -219,16 +219,65 @@ function showCard(placeResult){
         address.textContent =`Address: ${placeResult.formatted_address}`;
         newDiv.appendChild(address);
 
-        let listGroup= document.createElement('ul');
-        listGroup.classList.add('list-group','list-group-flush');
-       
-        let listItems = document.createElement('li');
-        listItems.classList.add('list-group-item');
-        listGroup.appendChild(listItems);
+        //trying to get the reviews
+
+        if(placeResult.reviews&&placeResult.reviews.length){
+            var contentStr =+ '<li>Reviews:'+
+            (function(rs,fx){
+                var list=document.createElement('ul');
+                newDiv.appendChild(list);
+                rs.forEach(function(r){
+                    list.appendChild(fx(r));
+                });
+                return '<ul>'+list.innerHTML+'</ul>';
+                return list;
+            }
+            (placeResult.reviews,function(r){
+                console.log(r.aspect);
+                var item =document.createElement('li');
+                item.classList.add('review');
+                
+                review =item.appendChild(document.createElement('ul'));
+                props ={
+                    author_name:'author',
+                    rating:'rating',
+                    text:'text'
+                };
+                item.appendChild(document.createElement('h6'));
+                item.lastChild.appendChild(document.createElement('a'));
+                item.lastChild.lastChild
+                    .appendChild(document.createTextNode(r.author_name));
+                item.lastChild.appendChild(document.createTextNode('('+r.rating+')'));
+                if(r.aspect&&r.aspect.length){
+                    item.appendChild(document.createElement('ul'));
+                    r.aspect.forEach(function(a){
+                        item.lastChild.appendChild(document.createElement('li'));
+                        item.lastChild.lastChild.appendChild(document.createElement.TextNode(a.type+':'+a.rating))
+                    });
+                }
+                item.appendChild(document.createElement('p'));
+                item.lastChild.appendChild(document.createTextNode(r.text));
+                return item;
+
+            }))+'</li>';            
+            contentStr =+ '</ul>';
+            console.log(contentStr);
+            infoWindow.setContent(contentStr);
+        }
+        
+          else {
+        var contentStr ="<h5>No Result, status="+ status +"</h5>";
         
         
-       
-
-       infoCard.classList.add("open");
-
     }
+      infoCard.classList.add("open");
+    }
+    
+  
+        
+        
+       
+
+     
+
+    
