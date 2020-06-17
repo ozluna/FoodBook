@@ -5,6 +5,10 @@ body{
     font-family: 'Raleway', sans-serif;
     font-weight: 500;
 }
+#logo{
+    color:#b45008; 
+    font-family:Courgette;
+}
 .landing{
     position: relative;
   
@@ -40,7 +44,7 @@ div video{
     font-size: xxx-large;
 }
 
- #map {
+#map {
         height: 500px;
         width:100%;
         border-radius: 2%;}
@@ -48,7 +52,43 @@ div video{
 div .img-thumbnail:hover {
     opacity:0.5;
 }
+/*info card design*/
+.open{
+   width: 18rem;
+}
+.close{
+    display:none;
+}
+.review{
+    overflow:scroll;
+}
+.card-img-top{
+    width:18rem;
+    height:50%;
+}
+.social{
+   padding:20px;
+   text-align:center;
 
+}
+.social h5{
+    color:#b45008; 
+    font-family: Courgette;
+    font-weight:bold;
+    text-align: center;
+    letter-spacing: 4px;
+    font-size:1.8em;
+}
+
+.social ul a i{
+    margin-left:1.5rem;
+    margin-right: 1.5rem;
+   width:30px;
+   font-size: 3em;
+   line-height: 10px;
+   color: #e8bf65;
+   padding: 20px 20px 10px 15px;
+}
 @media screen (max-width:991px){
 
     
