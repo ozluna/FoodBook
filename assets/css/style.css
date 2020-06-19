@@ -5,10 +5,15 @@ body{
     font-family: 'Raleway', sans-serif;
     font-weight: 500;
 }
+/*designing the navbar*/
 #logo{
     color:#b45008; 
     font-family:Courgette;
 }
+.navbar{
+    width:100%;
+}
+
 .landing{
     position: relative;
   
@@ -63,7 +68,9 @@ div .img-thumbnail:hover {
 .open{
    width: 18rem;
 }
-
+.websiteLink{
+    color:whitesmoke;
+}
 .card-img-top{
     width:18rem;
     height:50%;
