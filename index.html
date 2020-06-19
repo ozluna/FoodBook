@@ -1,179 +1,263 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init("user_8fw9I7940Dh4M6xYtVPwE");
+        
+      })();
+    </script>
 
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-		type="text/css" />
-	<link rel="stylesheet" href="assets/css/style.css">
+    <title>FoodBook</title>
+  </head>
 
+  <body onload="initMap()">
+    <header class="container-fluid">
+      <div class="row p-0">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <a class="navbar-brand" id="logo" href="index.html">FoodBook</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarText"
+            aria-controls="navbarText"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="#"
+                  >Home <span class="sr-only">(current)</span></a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#restaurantInfo">Find restaurant</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#about-me">About me</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#contact-me">Contact me</a>
+              </li>
+            </ul>
+            <span class="navbar-text"> </span>
+          </div>
+        </nav>
+      </div>
+    </header>
 
-	<title>FoodBook</title>
-</head>
+    <section class="landing">
+      <div class="greeting d-none d-lg-block d-xl-block">
+        <h4>WELCOME TO THE</h4>
+        <h2>FoodBook</h2>
+      </div>
+      <!-- Cambridge picture-->
+      <div class="video">
+        <video autoplay loop muted>
+          <source src="assets/video/restaurant1.mp4" type="video/mp4" />
 
-<body onload="initMap()">
-	<header class="container-fluid">
-		<div class="row p-0">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </section>
+    <section class="container-fluid">
+      <p>
+        Are you a foodie? Or Would you like to taste different cuisine today?
+        You are at the right place
+      </p>
+      <p>
+        Just click the cuisine you would like to try down below.if you click the
+        marker you will have more information about the restaurant
+      </p>
 
-			<nav class="navbar navbar-expand-lg navbar-light bg-light">
-				<a class="navbar-brand" id="logo" href="index.html">FoodBook</a>
-				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-                                <span class="navbar-toggler-icon"></span>
-                            </button>
-				<div class="collapse navbar-collapse" id="navbarText">
-					<ul class="navbar-nav mr-auto">
-						<li class="nav-item active">
-							<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#restaurantInfo">Find restaurant</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#about-me">About me</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#contact-me">Contact me</a>
-						</li>
-					</ul>
-					<span class="navbar-text">
+      <h1>What type of food would you like to eat today?</h1>
+    </section>
+    <!-- Create a button says find restaurants-->
+    <!--Button will release the informationJQuery-->
 
-                                </span>
-				</div>
-			</nav>
+    <div class="row p-0">
+      <div class="col-lg-2 col-md-4 col-sm-12 cuisine" id="british">
+        <img
+          src="assets/image/british.png"
+          alt="Britsh"
+          class="img-thumbnail"
+        />
+      </div>
+      <div class="col-lg-2 col-md-4 col-sm-12 cuisine" id="chinese">
+        <img
+          src="assets/image/chinese.png"
+          alt="Chinese"
+          class="img-thumbnail"
+        />
+      </div>
+      <div class="col-lg-2 col-md-4 col-sm-12 cuisine" id="indian">
+        <img src="assets/image/indian.png" alt="Indian" class="img-thumbnail" />
+      </div>
+      <div class="col-lg-2 col-md-4 col-sm-12 cuisine" id="japanese">
+        <img
+          src="assets/image/japanese.png"
+          alt="Japanese"
+          class="img-thumbnail"
+        />
+      </div>
+      <div class="col-lg-2 col-md-4 col-sm-12 cuisine" id="mediterranean">
+        <img
+          src="assets/image/mediterranean.png"
+          alt="Mediterranean"
+          class="img-thumbnail"
+        />
+      </div>
+      <div class="col-lg-2 col-md-4 col-sm-12 cuisine" id="middle-eastern">
+        <img
+          src="assets/image/middle eastern.png"
+          alt="Middle Eastern"
+          class="img-thumbnail"
+        />
+      </div>
+    </div>
+    <!-- map and information category-->
 
+    <section>
+      <div class="row p-0">
+        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+          <div id="map"></div>
 
-		</div>
+          <!--Crete a card for the results of the button-->
+        </div>
+        <div
+          class="col-xl-6 col-lg-6 col-md-12 col-sm-12"
+          id="restaurantInfo"
+        ></div>
+      </div>
+    </section>
+    <section>
+      <h3>ABOUT ME</h3>
+    </section>
 
+    <section class="contact container-fluid">
+      <div class="row bg-color-contact">
+        <div class="col">
+          <h3 class="contact-heading uppercase text-center">Contact me</h3>
+          <div class="center-form">
+            <form onsubmit="return sendMail(this);">
+              <input
+                type="text"
+                name="name"
+                id="fullname"
+                size="40"
+                class="form-control px-4 py-2"
+                placeholder="Name"
+              />
+              <input
+                type="email"
+                name="email"
+                id="email"
+                class="form-control px-4 py-2"
+                placeholder="Email"
+              />
+              <textarea
+                name="yourmessage"
+                id="yourmessage"
+                class="form-control px-4 py-2"
+                cols="120"
+                rows="10"
+                placeholder="Your Message"
+              ></textarea>
+              <button type="submit" value="Submit" class="btn btn-secondary">
+                Send
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
 
-	</header>
+    <footer>
+      <div class="col-md-12 social">
+        <h5 class="upper-case">Follow us</h5>
+        <ul class="list-inline">
+          <li class="list-inline-item">
+            <a href="https://www.facebook.com/" target="_blank">
+              <i class="fa fa-facebook-square" aria-hidden="true">
+                <span class="sr-only">facebook</span></i
+              >
+            </a>
+          </li>
+          <li class="list-inline-item">
+            <a href="https://www.instagram.com/" target="_blank">
+              <i class="fa fa-instagram" aria-hidden="true">
+                <span class="sr-only">instagram</span></i
+              >
+            </a>
+          </li>
 
-	<section class="landing">
-		<div class="greeting d-none d-lg-block d-xl-block">
-			<h4>WELCOME TO THE</h4>
-			<h2> FoodBook </h2>
+          <li class="list-inline-item">
+            <a href="https://www.youtube.com" target="_blank">
+              <i class="fa fa-youtube-square" aria-hidden="true">
+                <span class="sr-only">youtube</span></i
+              >
+            </a>
+          </li>
 
-		</div>
-		<!-- Cambridge picture-->
-		<div class="video">
-			<video autoplay loop muted>
-				<source src="assets/video/restaurant1.mp4" type="video/mp4">
+          <li class="list-inline-item">
+            <a href="https://www.twitter.com" target="_blank">
+              <i class="fa fa-twitter-square" aria-hidden="true">
+                <span class="sr-only">twitter</span></i
+              >
+            </a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
+    <script
+      async
+      defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB0AVF65zYstXEfpzGaxpJdjuMVPFm5PBY&libraries=places&callback=initMap"
+    ></script>
 
-				Your browser does not support the video tag.
-			</video>
-		</div>
-
-
-	</section>
-	<section>
-		<h1> What type of food would you like to eat today?</h1>
-
-	</section>
-	<!-- Create a button says find restaurants-->
-	<!--Button will release the informationJQuery-->
-
-	<div class="row p-0">
-		<div class="col-lg-2 col-md-4 col-sm-12" id="british"><img src="assets/image/british.png" alt="Britsh" class="img-thumbnail">
-
-			</div>
-			<div class="col-lg-2 col-md-4 col-sm-12" id="chinese"><img src="assets/image/chinese.png" alt="Chinese" class="img-thumbnail ">
-
-			</div>
-				<div class="col-lg-2 col-md-4 col-sm-12 " id="indian"><img src="assets/image/indian.png"  alt="Indian" class="img-thumbnail ">
-
-			</div>
-					<div class="col-lg-2 col-md-4 col-sm-12" id="japanese"><img src="assets/image/japanese.png" alt="Japanese" class="img-thumbnail ">
-
-			</div>
-						<div class="col-lg-2 col-md-4 col-sm-12" id="mediterranean"><img src="assets/image/mediterranean.png" alt="Mediterranean" class="img-thumbnail ">
-
-			</div>
-							<div class="col-lg-2 col-md-4 col-sm-12" id="middle-eastern"><img src="assets/image/middle eastern.png" alt="Middle Eastern" class="img-thumbnail">
-
-		</div>
-							</div>
-
-							<section>
-								<div class="row p-0">
-									<div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
-										<div id="map"></div>
-
-										<!--Crete a card for the results of the button-->
-
-
-									</div>
-									<div class="col-xl-6 col-lg-6 col-md-12 col-sm-12" id="restaurantInfo"></div>
-
-
-
-								</div>
-
-
-							</section>
-                            <section>
-                                <h3>ABOUT ME</h3>
-                            
-                            </section>
-
-
-
-							<footer>
-                             <div class="col-md-12 social">
-                <h5 class="upper-case ">Follow us</h5>
-                <ul class="list-inline">
-                    <li class="list-inline-item">
-                        <a href="https://www.facebook.com/" target="_blank">
-                            <i class="fa fa-facebook-square" aria-hidden="true"> <span class="sr-only">facebook</span></i>
-                        </a>
-                    </li>
-                    <li class="list-inline-item">
-                        <a href="https://www.instagram.com/" target="_blank">
-                            <i class="fa fa-instagram" aria-hidden="true"> <span class="sr-only">instagram</span></i>
-                        </a>
-                    </li>
-                    
-                    <li class="list-inline-item">
-                        <a href="https://www.youtube.com" target="_blank">
-                            <i class="fa fa-youtube-square" aria-hidden="true"> <span class="sr-only">youtube</span></i>
-                        </a>
-                    </li>
-                    
-                    <li class="list-inline-item">
-                        <a href="https://www.twitter.com" target="_blank">
-                            <i class="fa fa-twitter-square" aria-hidden="true"> <span class="sr-only">twitter</span></i>
-                        </a>
-                    </li>
-                </ul>
-
-            </div>
-                            </footer>
-							<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-								integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-								crossorigin="anonymous">
-							</script>
-							<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-								integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-								crossorigin="anonymous">
-							</script>
-							<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-								integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-								crossorigin="anonymous">
-							</script>
-							<script
-								src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
-							</script>
-							<script async defer
-								src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB0AVF65zYstXEfpzGaxpJdjuMVPFm5PBY&libraries=places&callback=initMap">
-							</script>
-
-
-							<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-								integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-								crossorigin="anonymous"></script>
-							<script src="assets/js/script.js"></script>
-							<script src="assets/js/restaurant.js"></script>
-</body>
-
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/sendEmail.js"></script>
+  </body>
 </html>
