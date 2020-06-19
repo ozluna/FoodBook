@@ -64,56 +64,27 @@ document.getElementById("middle-eastern").addEventListener("click", MiddleEaster
 document.getElementById("chinese").addEventListener("click", Chinese);
 
 function British() {
-  let request = {
-    bounds: map.getBounds(),
-    keyword: "fishandchips",
-  };
-  service = new google.maps.places.PlacesService(map);
-  service.nearbySearch(request, nearbyCallback);
+ cuisine('fishandchips')
 }
 function Chinese() {
-  let request = {
-    bounds: map.getBounds(),
-    keyword: "chinese+restaurant",
-  };
-
-  service = new google.maps.places.PlacesService(map);
-  service.nearbySearch(request, nearbyCallback);
+  cuisine('chinese+restauran');
 }
 function Indian() {
-  let request = {
-    bounds: map.getBounds(),
-    keyword: "indian+restaurant",
-  };
-
-  service = new google.maps.places.PlacesService(map);
-  service.nearbySearch(request, nearbyCallback);
+ cuisine('indian+restaurant');
 }
 function Japanese() {
-  let request = {
-    bounds: map.getBounds(),
-    keyword: "japanese+restaurant",
-  };
-
-  service = new google.maps.places.PlacesService(map);
-  service.nearbySearch(request, nearbyCallback);
+ cuisine('japanese+restaurant');
 }
 function Mediterranean() {
-  let request = {
-    bounds: map.getBounds(),
-    keyword: "mediterranean+restaurant",
-  };
-
-  service = new google.maps.places.PlacesService(map);
-  service.nearbySearch(request, nearbyCallback);
+  cuisine('mediterranean+restaurant');
 }
 function MiddleEastern() {
- cuisine('middleEastern');
+ cuisine('middleEastern+retaurant');
 }
 function cuisine(keyWord){
  let request = {
     bounds: map.getBounds(),
-    keyword: "middle eastern+restaurant",
+    keyword: keyWord,
   };
 
   service = new google.maps.places.PlacesService(map);
