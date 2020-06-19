@@ -45,27 +45,43 @@ div video{
 }
 
 #map {
-        height: 500px;
+        height: 35rem;
         width:100%;
-        border-radius: 2%;}
+        border-radius: 2%;
+        margin-top:1rem;
+    }
+#restaurantInfo{
+    margin-top:1rem;
+}
 
 div .img-thumbnail:hover {
     opacity:0.5;
+    cursor: pointer;
 }
+
 /*info card design*/
 .open{
    width: 18rem;
 }
-.close{
-    display:none;
-}
-.review{
-    overflow:scroll;
-}
+
 .card-img-top{
     width:18rem;
     height:50%;
 }
+.review{
+    
+    height:15rem;
+    overflow: scroll;
+}
+.card-img-top {
+    width: 100%;
+    height: 20%;
+}
+
+.contact{
+    width:50%;
+}
+/*social links*/
 .social{
    padding:20px;
    text-align:center;
@@ -81,8 +97,8 @@ div .img-thumbnail:hover {
 }
 
 .social ul a i{
-    margin-left:1.5rem;
-    margin-right: 1.5rem;
+   margin-left:1.5rem;
+   margin-right: 1.5rem;
    width:30px;
    font-size: 3em;
    line-height: 10px;
