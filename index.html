@@ -52,7 +52,7 @@
                 >
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#restaurantInfo">Find restaurant</a>
+                <a class="nav-link" href="#cuisine">Find restaurant</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#about-me">About me</a>
@@ -84,9 +84,9 @@
     <section class="container-fluid status">
       <h3>
                  Are you a foodie?<br>
-           Would you like to taste a different cuisine today?<br>
-                You are in the right place
+           Would you like to taste a different cuisine today?                        
       </h3>
+      <h3> You are in the right place</h3>
       <p>
                 Just click the cuisine you would like to try down below.<br>
         if you click the marker you will have more information about the restaurant
@@ -95,9 +95,9 @@
       <h2>What type of food would you like to eat today?</h2>
     </section>
     <!-- Create a button says find restaurants-->
-    <!--Button will release the informationJQuery-->
+    <!--markers will release the information in js-->
 
-    <div class="row m-0">
+    <div class="row m-0" id="cuisine">
       <div class="col-lg-2 col-md-4 col-sm-12 cuisine" id="british">
         <img
           src="assets/image/british.png"
@@ -152,11 +152,14 @@
         ></div>
       </div>
     </section>
-    <section>
+    <section id="about-me" class="mt-5 mb-3">
       <h3>ABOUT ME</h3>
+      <p class="my-6"> I created this website for people like me who enjoy trying food from different cuisines and want to know new places.<br>
+                        If you have any suggestions please contact me filling the form down below 
+      </p>
     </section>
 
-    <section class="contact container-fluid">
+    <section class="container-fluid mt-5" id="contact-me">
       <div class="row bg-color-contact">
         <div class="col">
           <h3 class="contact-heading uppercase text-center">Contact me</h3>
@@ -185,9 +188,11 @@
                 rows="10"
                 placeholder="Your Message"
               ></textarea>
-              <button type="submit" value="Submit" class="btn btn-secondary">
+              <div class="col-xs-2 col-sm-2 col-md-8 col-lg-12 col-xl-12 mt-2">
+              <button type="submit" value="Submit" class="btn">
                 Send
               </button>
+              </div>
             </form>
           </div>
         </div>
