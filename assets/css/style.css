@@ -3,7 +3,8 @@
 body{
     margin:0;
     font-family: 'Raleway', sans-serif;
-   text-align:center;
+    text-align:center;
+   
       
 }
 /*designing the navbar*/
@@ -60,7 +61,7 @@ body{
 
 .status p {
    
-    margin-top: 3rem;
+    margin-top: 1rem;
     margin-bottom: 1rem;
     font-size:medium;
     color:#e8bf65;
@@ -68,7 +69,7 @@ body{
 .status h3{
     
     padding-top: 1rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
     font-size: x-large;
     font-weight: bolder;
     color: whitesmoke;
@@ -119,9 +120,26 @@ div .img-thumbnail:hover {
     width: 100%;
     height: 20%;
 }
-
-.contact{
+/*about me section style*/
+#about-me h3{
+    color: #b45008;
+}
+#about-me p{
+    font-size:large;
+}
+#contact-me{
     width:50%;
+    color:#b45008;
+}
+.btn{
+    color:whitesmoke;
+    background-color: #e8bf65;
+    border-color:#e8bf65;
+}
+.btn:hover{
+    background-color:#b45008;
+    color:whitesmoke;
+
 }
 /*social links*/
 .social{
@@ -132,8 +150,7 @@ div .img-thumbnail:hover {
 .social h5{
     color:#b45008; 
     font-family: Courgette;
-    font-weight:bold;
-   
+    font-weight:bold;   
     letter-spacing: 4px;
     font-size:1.8em;
 }
@@ -146,6 +163,9 @@ div .img-thumbnail:hover {
    line-height: 10px;
    color: #e8bf65;
    padding: 20px 20px 10px 15px;
+}
+.social ul a i:hover{
+    color:#b45008;
 }
 
 /*animation for the card from Animista*/
