@@ -30,8 +30,8 @@
 
   <body onload="initMap()">
     <header class="container-fluid">
-      <div class="row p-0">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="row m-0">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
           <a class="navbar-brand" id="logo" href="index.html">FoodBook</a>
           <button
             class="navbar-toggler"
@@ -68,35 +68,36 @@
     </header>
 
     <section class="landing">
-      <div class="greeting d-none d-lg-block d-xl-block">
+      <div class="greeting slide-fwd-center">
         <h4>WELCOME TO THE</h4>
         <h2>FoodBook</h2>
       </div>
-      <!-- Cambridge picture-->
+     <!--restaurant -->
       <div class="video">
         <video autoplay loop muted>
-          <source src="assets/video/restaurant1.mp4" type="video/mp4" />
+          <source src="assets/video/restaurant.mp4" type="video/mp4" />
 
           Your browser does not support the video tag.
         </video>
       </div>
     </section>
-    <section class="container-fluid">
+    <section class="container-fluid status">
+      <h3>
+                 Are you a foodie?<br>
+           Would you like to taste a different cuisine today?<br>
+                You are in the right place
+      </h3>
       <p>
-        Are you a foodie? Or Would you like to taste different cuisine today?
-        You are at the right place
-      </p>
-      <p>
-        Just click the cuisine you would like to try down below.if you click the
-        marker you will have more information about the restaurant
+                Just click the cuisine you would like to try down below.<br>
+        if you click the marker you will have more information about the restaurant
       </p>
 
-      <h1>What type of food would you like to eat today?</h1>
+      <h2>What type of food would you like to eat today?</h2>
     </section>
     <!-- Create a button says find restaurants-->
     <!--Button will release the informationJQuery-->
 
-    <div class="row p-0">
+    <div class="row m-0">
       <div class="col-lg-2 col-md-4 col-sm-12 cuisine" id="british">
         <img
           src="assets/image/british.png"
@@ -139,7 +140,7 @@
     <!-- map and information category-->
 
     <section>
-      <div class="row p-0">
+      <div class="row m-0">
         <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
           <div id="map"></div>
 
