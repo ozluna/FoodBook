@@ -1,4 +1,4 @@
-var map, infoWindow, services, keyWord;
+var map, infoWindow, service, keyWord, bounds;
 var userPosition;
 var markers = [];
 let currentInfoWindow;
@@ -6,9 +6,7 @@ let currentInfoWindow;
 function initMap() {
   bounds = new google.maps.LatLngBounds();
   infoWindow = new google.maps.InfoWindow();
-
   currentInfoWindow = infoWindow;
-
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(
       function (position) {
@@ -18,13 +16,15 @@ function initMap() {
         };
         map = new google.maps.Map(document.getElementById("map"), {
           center: pos,
-          zoom: 14,
+          zoom: 15,
         });
+        bounds.extend(pos);
+        
         infoWindow.setPosition(pos);
         infoWindow.setContent("Location found.");
         infoWindow.open(map);
         map.setCenter(pos);
-        //getNearbyPlaces(pos);
+       
       },
       function () {
         handleLocationError(true, infoWindow);
@@ -38,17 +38,16 @@ function initMap() {
 // Handle a geolocation error
 function handleLocationError(browserHasGeolocation, infoWindow) {
   // Set default location to Cambridge, United Kingdom
-  pos = { lat: 52.2141579, lng: 0.147892 };
+  pos = { lat:51.509865, lng:-0.118092 };
   map = new google.maps.Map(document.getElementById("map"), {
     center: pos,
-    zoom: 14,
+    zoom: 15,
   });
 
   // Display an InfoWindow at the map center
   infoWindow.setPosition(pos);
   infoWindow.setContent(
-    browserHasGeolocation
-      ? "Geolocation permissions denied. Using default location."
+    browserHasGeolocation ? "Geolocation permissions denied. Using default location."
       : "Error: Your browser doesn't support geolocation."
   );
   infoWindow.open(map);
@@ -62,12 +61,12 @@ document.getElementById("japanese").addEventListener("click", Japanese);
 document.getElementById("mediterranean").addEventListener("click", Mediterranean);
 document.getElementById("middle-eastern").addEventListener("click", MiddleEastern);
 document.getElementById("chinese").addEventListener("click", Chinese);
-
+   
 function British() {
  cuisine('fishandchips')
 }
 function Chinese() {
-  cuisine('chinese+restauran');
+  cuisine('chinese+restaurant');
 }
 function Indian() {
  cuisine('indian+restaurant');
@@ -213,10 +212,9 @@ function showCard(placeResult) {
     websiteLink.textContent= "Go to the website";
     websiteLink.href = placeResult.website;
     websiteLink.classList.add("websiteLink");
-    websiteBut.classList.add("btn","btn-primary");
+    websiteBut.classList.add("btn");
     websiteBut.appendChild(websiteLink);
     newDiv.appendChild(websiteBut);
-    console.log("this website have a link");
     } 
   
   //Getting first 5 reviews reviews if there is one
@@ -236,7 +234,6 @@ function showCard(placeResult) {
         return "<ul>" + list.innerHTML + "</ul>";
         return list;
       })(placeResult.reviews, function (r) {
-        console.log(r.aspect);
         var item = document.createElement("li");
 
         review = item.appendChild(document.createElement("ul"));
@@ -268,9 +265,8 @@ function showCard(placeResult) {
       }) +
       "</li>";
     contentStr = +"</ul>";
-    console.log(contentStr);
     infoWindow.setContent(contentStr);
-  } else {
+    } else {
     var contentStr = "<h5>No Result, status=" + status + "</h5>";
   }
 
