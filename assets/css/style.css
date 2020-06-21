@@ -4,7 +4,7 @@ body{
     margin:0;
     font-family: 'Raleway', sans-serif;
     text-align:center;
-   
+    scroll-behavior: smooth;
       
 }
 /*designing the navbar*/
@@ -51,7 +51,7 @@ body{
     color:#b45008;
     font-family:Courgette;
     padding: 0 0.75em;
-    font-size: xxx-large;
+    font-size: 3em;
         
 }
 /* Website status design*/
@@ -78,6 +78,11 @@ body{
     color:whitesmoke;
    
 }
+/*the cuisine selector change hover over*/
+div .img-thumbnail:hover {
+    opacity:0.5;
+    cursor: pointer;
+}
 
 #map {
         height: 50rem;
@@ -90,10 +95,7 @@ body{
     text-align: left;
 }
 
-div .img-thumbnail:hover {
-    opacity:0.5;
-    cursor: pointer;
-}
+
 
 /*info card design*/
 .open{
@@ -118,33 +120,36 @@ div .img-thumbnail:hover {
 
 .card-img-top {
     width: 100%;
-    height: 20%;
+    height: 50%;
 }
 /*about me section style*/
 #about-me h3{
     color: #b45008;
+    font-family: Courgette;
 }
 #about-me p{
     font-size:large;
 }
-#contact-me{
+#contact-me{   
     width:50%;
     color:#b45008;
+}
+#contact-me h3{
+     font-family: Courgette;
 }
 .btn{
     color:whitesmoke;
     background-color: #e8bf65;
-    border-color:#e8bf65;
-}
+    }
 .btn:hover{
     background-color:#b45008;
     color:whitesmoke;
+    text-decoration: none;
 
 }
 /*social links*/
 .social{
-   padding:20px;
-   
+   padding:20px;   
 
 }
 .social h5{
@@ -169,31 +174,47 @@ div .img-thumbnail:hover {
 }
 
 /*animation for the card from Animista*/
-.slide-fwd-center {
-	-webkit-animation: slide-fwd-center 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-	        animation: slide-fwd-center 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+.scale-in-top {
+	-webkit-animation: scale-in-top 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: scale-in-top 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 /*Key frames for Animation*/
-@-webkit-keyframes slide-fwd-center {
+
+@-webkit-keyframes scale-in-top {
   0% {
-    -webkit-transform: translateZ(0);
-            transform: translateZ(0);
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    -webkit-transform-origin: 50% 0%;
+            transform-origin: 50% 0%;
+    opacity: 1;
   }
   100% {
-    -webkit-transform: translateZ(160px);
-            transform: translateZ(160px);
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-transform-origin: 50% 0%;
+            transform-origin: 50% 0%;
+    opacity: 1;
   }
 }
-@keyframes slide-fwd-center {
+@keyframes scale-in-top {
   0% {
-    -webkit-transform: translateZ(0);
-            transform: translateZ(0);
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    -webkit-transform-origin: 50% 0%;
+            transform-origin: 50% 0%;
+    opacity: 1;
   }
   100% {
-    -webkit-transform: translateZ(160px);
-            transform: translateZ(160px);
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-transform-origin: 50% 0%;
+            transform-origin: 50% 0%;
+    opacity: 1;
   }
 }
+
+
+
 
 @media screen and (max-width:768px){
  /*fixing the propotion of the buttons when the screen is smaller */ 
