@@ -16,7 +16,7 @@
     </script>
     <title>FoodBook</title>
   </head>
-
+  
   <body onload="initMap()">
     <header class="container-fluid">
       <div class="row m-0">
@@ -27,16 +27,13 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav mr-auto">
-              <li class="nav-item active">
+              <li class="nav-item">
                 <a class="nav-link" href="#"
                   >Home <span class="sr-only">(current)</span></a
                 >
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#cuisine">Find restaurant</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#about-me">About me</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#contact-me">Contact me</a>
@@ -49,7 +46,7 @@
     </header>
 
     <section class="landing">
-      <div class="greeting slide-fwd-center">
+      <div class="greeting scale-in-top">
         <h4>WELCOME TO THE</h4>
         <h2>FoodBook</h2>
       </div>
@@ -76,9 +73,9 @@
       <h2>What type of food would you like to eat today?</h2>
     </section>
     <!-- Create a button says find restaurants-->
-    <!--markers will release the information in js-->
-
-    <div class="row m-0" id="cuisine">
+    
+    <section id="cuisine" class=" my-3">
+    <div class="row m-0" >
       <div class="col-lg-2 col-md-4 col-sm-12" id="british">
         <img src="assets/image/british.png" alt="British" class="img-thumbnail"/>
       </div>
@@ -100,20 +97,21 @@
         <img src="assets/image/middle-eastern.png" alt="Middle Eastern" class="img-thumbnail" />
       </div>
     </div>
+    </section>
     <!-- map and information category-->
-
+   
     <section>
       <div class="row m-0">
         <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
           <div id="map"></div>
-
-          <!--Crete a card for the results of the button-->
+           <!--markers will release the information with js-->
+          <!--Crete a card for the results of the button-->          
         </div>
         <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12" id="restaurantInfo" ></div>
       </div>
     </section>
     <section id="about-me" class="mt-5 mb-3">
-      <h3>ABOUT ME</h3>
+      <h3>About me</h3>
       <p class="my-6"> I created this website for people like me who enjoy trying food from different cuisines and want to know new places.<br>
                         If you have any suggestions please contact me filling the form down below 
       </p>
@@ -128,7 +126,7 @@
               <input type="text" name="name" id="fullname"  size="40"  class="form-control px-4 py-2"  placeholder="Name"/>
               <input type="email"  name="email" id="email" class="form-control px-4 py-2" placeholder="Email"/>
               <textarea name="yourmessage" id="yourmessage" class="form-control px-4 py-2" cols="120"  rows="10" placeholder="Your Message" ></textarea>
-              <div class="col-xs-2 col-sm-2 col-md-8 col-lg-12 col-xl-12 mt-2">
+              <div class="col-xs-2 col-sm-2 col-md-8 col-lg-12 col-xl-12 m-auto py-3">
               <button type="submit" value="Submit" class="btn">  Send </button>
               </div>
             </form>
@@ -138,8 +136,8 @@
     </section>
 
     <footer>
-      <div class="col-md-12 social">
-        <h5 class="upper-case">Follow us</h5>
+      <div class="col-md-12 social ">
+        <h5 class="upper-case my-3">Follow me</h5>
         <ul class="list-inline">
           <li class="list-inline-item">
             <a href="https://www.facebook.com/" target="_blank">
@@ -188,7 +186,7 @@
     ></script>
     <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
     <script async defer
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB0AVF65zYstXEfpzGaxpJdjuMVPFm5PBY&libraries=places&callback=initMap"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAiH_4snPRQxnLLbrFzCK_CGNaYuVSFVsc&libraries=places&callback=initMap"
     ></script>
 
     <script
