@@ -217,11 +217,9 @@ div .img-thumbnail:hover {
 
 
 @media screen and (max-width:768px){
- /*fixing the propotion of the buttons when the screen is smaller */ 
+ /*fixing the position of the buttons when the screen is smaller */ 
     .cuisine{
         display: block;
-        padding-left:10rem;
-        padding-right:9rem;
         margin-bottom: 1rem;
     }
     
