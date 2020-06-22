@@ -37,7 +37,7 @@ This website scope are those people who is looking for different tastes from the
 ## Structure
 
 The website is build in one page and three sections landing, interactive section and contact form section.  
-The landing section has the header navigation section is placed at the top of the page along with the logo and fixed, will follow the user through the page. 
+The landing section has the header navigation section is placed at the top of the page along with the logo and fixed, will follow the user through the page.  
 I used tree structure therefore the menu on the mobile version collapses to the "hamburger" icon made with bootstrap classes. There is a short looped video
 with animated box greets the user as they arrive the website.
 Next section gives brief information about what the website offer how to use it.
@@ -51,8 +51,8 @@ Footer has the social links colors and layout suited the rest of the website.
 
 ## Skeleton
 
-I tried to give as many information as I can with minimum choices. Navigation has "home", "find restaurant", "contact me" section.
-I designed the website prototype on [__wireframe__](https://wireframe.cc/pro/pp/21e877a46334308) website.
+I tried to give as many information as I can with minimum choices. Navigation has "home", "find restaurant", "contact me" section.  
+The website prototype I have designed is [here](wireframe/FoodBook Wireframe.pdf).  
 ## Surface
 
 The colors I used in this project are #b45008 , #e8bf65 and whitesmoke.
