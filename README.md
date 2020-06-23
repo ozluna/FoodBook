@@ -149,8 +149,8 @@ If you have Git installed on your system, you can clone the repository with the 
 
 
 ## **Credits**
-I used Google Places Documentation and [codelabs developers](https://codelabs.developers.google.com/) when I created the code to find the user's location 
-script and I found some help on "stackoverflow" for the script to call the reviews.  SendEmail function was created with help of documentation from EmailJs and code institute lessons.  
+I used Google Places Documentation and [codelabs developers](https://codelabs.developers.google.com/codelabs/google-maps-nearby-search-js/#0) when I created the code to find the user's location 
+script and I found some help on ["stackoverflow"](https://stackoverflow.com/questions/29734251/google-places-js-api-show-reviews) for the script to call the reviews.  SendEmail function was created with help of documentation from EmailJs and code institute lessons.  
 
 
 All the images are created on [Canva](https://www.canva.com/)  
