@@ -111,7 +111,7 @@ User can
   * [Fontawsome](https://fontawesome.com/) for the social links.
 
 
-  * [Animista](https://animista.net/play/entrances/scale-in/scale-in-top)
+  * [Animista](https://animista.net/play/entrances/scale-in/scale-in-top) for the greeting animation.
 
 
     
@@ -143,7 +143,7 @@ If you have Git installed on your system, you can clone the repository with the 
 
 * Type git clone, and then paste the URL you copied earlier.
 
-> `git clone https://github.com/ozluna/FoodBook`  
+  `git clone https://github.com/ozluna/FoodBook`  
 
 * Press Enter to create your local clone.
 
@@ -160,10 +160,10 @@ For responsiveness I used [Boostrap](https://getbootstrap.com/)
 For fonts I used [Google Fonts](https://fonts.google.com/)  
 
 
-----
-### **Thank you for visiting the website**
+## **Acknowledgements**
 
-
+In the process of finishing this website I used many resources mainly, Google Places documentation, MDN web docs, W3Schools, Stack Overflow.  
+Youtube channels such as Travers media, online resources [goalkicker](https://goalkicker.com), code institute videos and last but not least my mentor and tutors help.
 
 
 
