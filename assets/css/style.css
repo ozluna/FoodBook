@@ -239,16 +239,3 @@ div .img-thumbnail:hover {
         margin-top:8rem;
     }
 }
-@media screen and (min-width:991px){
-
-    greeting {
-    display: block;
-    position: absolute;
-    top: 5%;
-    background-color: rgb(255, 255, 249,0.7);
-    width: 20rem;
-    height: 20rem;
-    border-radius: 50%;
-    left: 42%;
-}
-}
