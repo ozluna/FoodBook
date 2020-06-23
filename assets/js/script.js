@@ -1,7 +1,7 @@
-var map, infoWindow, service, keyWord, bounds;
-var userPosition;
+var map, infoWindow, service, bounds;
 var markers = [];
 let currentInfoWindow;
+let pos;
 
 function initMap() {
   bounds = new google.maps.LatLngBounds();
@@ -63,7 +63,7 @@ document.getElementById("middle-eastern").addEventListener("click", MiddleEaster
 document.getElementById("chinese").addEventListener("click", Chinese);
    
 function British() {
- cuisine('fishandchips')
+ cuisine('fishandchips');
 }
 function Chinese() {
   cuisine('chinese+restaurant');
@@ -181,7 +181,7 @@ function showCard(placeResult) {
   //Adding photo if there is one
   if (placeResult.photos) {
     let firstPhoto = placeResult.photos[0];
-    photo = document.createElement("img");
+    let photo = document.createElement("img");
     photo.classList.add("card-img-top");
     photo.src = firstPhoto.getUrl();
     infoCard.appendChild(photo);
@@ -205,16 +205,16 @@ function showCard(placeResult) {
   address.textContent = `Address: ${placeResult.formatted_address}`;
   newDiv.appendChild(address);
   if (placeResult.website) {
+    
     let websiteBut = document.createElement('button');
     let websiteLink = document.createElement('a');
-    let websiteUrl = document.createTextNode(placeResult.website);
-    websiteLink.appendChild(websiteUrl);
-    websiteLink.textContent= "Go to the website";
+    websiteBut.textContent= "Go to the website";
     websiteLink.href = placeResult.website;
+    websiteLink.target="_blank";
     websiteLink.classList.add("websiteLink");
     websiteBut.classList.add("btn");
-    websiteBut.appendChild(websiteLink);
-    newDiv.appendChild(websiteBut);
+    websiteLink.appendChild(websiteBut);
+    newDiv.appendChild(websiteLink);
     } 
   
   //Getting first 5 reviews reviews if there is one
@@ -232,11 +232,11 @@ function showCard(placeResult) {
           list.appendChild(fx(r));
         });
         return "<ul>" + list.innerHTML + "</ul>";
-        return list;
+      
       })(placeResult.reviews, function (r) {
         var item = document.createElement("li");
 
-        review = item.appendChild(document.createElement("ul"));
+        var review = item.appendChild(document.createElement("ul"));
         props = {
           author_name: "author",
           rating: "rating",
@@ -267,7 +267,7 @@ function showCard(placeResult) {
     contentStr = +"</ul>";
     infoWindow.setContent(contentStr);
     } else {
-    var contentStr = "<h5>No Result, status=" + status + "</h5>";
+    contentStr = "<h5>No Result, status=" + status + "</h5>";
   }
 
   infoCard.classList.add("open");
