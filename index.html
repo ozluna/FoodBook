@@ -17,9 +17,10 @@
     <title>FoodBook</title>
   </head>
   
-  <body onload="initMap()">
+  <body>
     <header class="container-fluid">
       <div class="row m-0">
+      <!--website logo and navbar-->
         <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
           <a class="navbar-brand" id="logo" href="index.html">FoodBook</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false"  aria-label="Toggle navigation">
@@ -28,9 +29,7 @@
           <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav mr-auto">
               <li class="nav-item">
-                <a class="nav-link" href="#"
-                  >Home <span class="sr-only">(current)</span></a
-                >
+                <a class="nav-link" href="#">Home </a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#cuisine">Find restaurant</a>
@@ -67,40 +66,39 @@
       <h3> You are in the right place</h3>
       <p>
                 Just click the cuisine you would like to try down below.<br>
-        if you click the marker you will have more information about the restaurant
+        If you click the marker you will have more information about the restaurant
       </p>
 
       <h2>What type of food would you like to eat today?</h2>
     </section>
     <!-- Create a button says find restaurants-->
     
-    <section id="cuisine" class=" my-3">
-    <div class="row m-0" >
-      <div class="col-lg-2 col-md-4 col-sm-12 cuisine" id="british">
+        <div class="row m-0" id="cuisine" >
+      <div class="col-lg-2 col-md-4 col-sm-12 " id="british">
         <img src="assets/image/british.png" alt="British" class="img-thumbnail"/>
       </div>
-      <div class="col-lg-2 col-md-4 col-sm-12 cuisine" id="chinese">
+      <div class="col-lg-2 col-md-4 col-sm-12 " id="chinese">
         <img src="assets/image/chinese.png" alt="Chinese" class="img-thumbnail"
         />
       </div>
-      <div class="col-lg-2 col-md-4 col-sm-12 cuisine" id="indian">
+      <div class="col-lg-2 col-md-4 col-sm-12" id="indian">
         <img src="assets/image/indian.png" alt="Indian" class="img-thumbnail" />
       </div>
-      <div class="col-lg-2 col-md-4 col-sm-12 cuisine" id="japanese">
+      <div class="col-lg-2 col-md-4 col-sm-12" id="japanese">
         <img src="assets/image/japanese.png" alt="Japanese" class="img-thumbnail"/>
       </div>
-      <div class="col-lg-2 col-md-4 col-sm-12 cuisine" id="mediterranean">
+      <div class="col-lg-2 col-md-4 col-sm-12" id="mediterranean">
         <img
           src="assets/image/mediterranean.png" alt="Mediterranean" class="img-thumbnail"/>
       </div>
-      <div class="col-lg-2 col-md-4 col-sm-12 cuisine" id="middle-eastern">
+      <div class="col-lg-2 col-md-4 col-sm-12" id="middle-eastern">
         <img src="assets/image/middle-eastern.png" alt="Middle Eastern" class="img-thumbnail" />
       </div>
     </div>
-    </section>
+  
     <!-- map and information category-->
    
-    <section>
+  
       <div class="row m-0">
         <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
           <div id="map"></div>
@@ -109,23 +107,23 @@
         </div>
         <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12" id="restaurantInfo" ></div>
       </div>
-    </section>
-    <section id="about-me" class="mt-5 mb-3">
+    
+    <section id="about-me">
       <h3>About me</h3>
       <p class="my-6"> I created this website for people like me who enjoy trying food from different cuisines and want to know new places.<br>
                         If you have any suggestions please contact me filling the form down below 
       </p>
     </section>
-
+    <!--Contact me form -->
     <section class="container-fluid mt-5" id="contact-me">
       <div class="row bg-color-contact">
         <div class="col">
           <h3 class="contact-heading uppercase text-center">Contact me</h3>
           <div class="center-form">
             <form onsubmit="return sendMail(this);">
-              <input type="text" name="name" id="fullname"  size="40"  class="form-control px-4 py-2"  placeholder="Name"/>
-              <input type="email"  name="email" id="email" class="form-control px-4 py-2" placeholder="Email"/>
-              <textarea name="yourmessage" id="yourmessage" class="form-control px-4 py-2" cols="120"  rows="10" placeholder="Your Message" ></textarea>
+              <input type="text" name="name" id="fullname"  size="40"  class="form-control px-4 py-2"  placeholder="Name" required/>
+              <input type="email"  name="email" id="email" class="form-control px-4 py-2" placeholder="Email" required/>
+              <textarea name="yourmessage" id="yourmessage" class="form-control px-4 py-2" cols="120"  rows="10" placeholder="Your Message" required></textarea>
               <div class="col-xs-2 col-sm-2 col-md-8 col-lg-12 col-xl-12 m-auto py-3">
               <button type="submit" value="Submit" class="btn">  Send </button>
               </div>
@@ -134,6 +132,7 @@
         </div>
       </div>
     </section>
+    <!-- Footer with social links-->
 
     <footer>
       <div class="col-md-12 social ">
